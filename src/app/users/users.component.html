@@ -1,0 +1,55 @@
+<app-navbar></app-navbar>
+<div class="container mt-5">
+  <h2 class="text-center mb-4">User Management</h2>
+
+  <div class="row">
+    <div class="col-md-6">
+      <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="form-container">
+        <div class="form-group">
+          <label for="name">First Name</label>
+          <input id="name" type="text" class="form-control" formControlName="name" placeholder="Enter first name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input id="email" type="email" class="form-control" formControlName="contactEmail" placeholder="Enter email" required>
+        </div>
+        <div class="form-group">
+          <label for="cin">CIN</label>
+          <input id="cin" type="text" class="form-control" formControlName="cin" placeholder="Enter CIN" required>
+        </div>
+        <div class="form-group">
+          <label for="role">Role</label>
+          <select id="role" class="form-control" formControlName="role" required>
+            <option value="" disabled>Select role</option>
+            <option value="Inventory manager">Inventory manager</option>
+            <option value="Warehouse worker">Warehouse worker</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">
+          {{ selectedUser ? 'Update User' : 'Add User' }}
+        </button>
+      </form>
+    </div>
+
+    <div class="col-md-6">
+      <h3 class="text-center mt-4">Users List</h3>
+      <div class="list-container mt-3">
+        <div *ngFor="let user of users" class="list-item">
+          <div class="user-info">
+            <strong>{{ user.name }}</strong> <span class="text-muted">({{ user.contactEmail }})</span><br>
+            <span class="text-muted">CIN: {{ user.cin }}</span><br>
+            <span class="text-muted">Role: {{ user.role }}</span>
+          </div>
+          <div class="action-buttons">
+            <button class="btn btn-secondary btn-sm" (click)="editUser(user)">
+              Edit
+            </button>
+            <button class="btn btn-danger btn-sm" (click)="deleteUser(user.id)">
+              Delete
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

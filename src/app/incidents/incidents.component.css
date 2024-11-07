@@ -1,0 +1,125 @@
+/* Container principal pour centrer le formulaire et la liste */
+.incident-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 40px; /* Augmenter le padding */
+  background: linear-gradient(to right, #f4f4f4, #e2e2e2);
+}
+
+.incident-form {
+  width: 100%; /* Utiliser 100% de la largeur */
+  max-width: 800px; /* Augmenter la largeur maximale */
+  margin: 20px auto;
+  padding: 40px; /* Augmenter le padding */
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.incident-form:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2); /* Effet d'ombre lors du survol */
+}
+
+.incident-form-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.incident-form h2 {
+  margin-bottom: 30px; /* Augmenter l'espacement */
+  font-size: 30px; /* Augmenter la taille de la police */
+  color: #333;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.full-width {
+  width: 100%;
+}
+
+.incident-list {
+  width: 100%; /* Utiliser 100% de la largeur */
+  max-width: 800px; /* Augmenter la largeur maximale */
+  margin: 20px auto;
+  padding: 30px; /* Augmenter le padding */
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1);
+}
+
+.incident-item {
+  padding: 20px; /* Augmenter le padding */
+  border-bottom: 1px solid #ddd;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.incident-item:hover {
+  background-color: #f9f9f9;
+  transform: translateY(-2px);
+}
+
+.incident-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.incident-details h3 {
+  margin: 5px 0;
+  font-size: 24px; /* Augmenter la taille de la police */
+  color: #333;
+}
+
+.incident-details p {
+  margin: 5px 0;
+  font-size: 18px; /* Augmenter la taille de la police */
+  color: #666;
+}
+
+/* Style pour le bouton de clôture */
+button {
+  margin-top: 15px; /* Augmenter l'espacement */
+  transition: background 0.3s;
+}
+
+button[mat-stroked-button] {
+  margin-top: 10px;
+  align-self: flex-start;
+  border: 2px solid #1976d2;
+  color: #1976d2;
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px 20px; /* Ajouter du padding */
+}
+
+button[mat-stroked-button]:hover {
+  background-color: #1976d2;
+  color: white;
+}
+
+/* Status clôturé (grisé) */
+.closed h3,
+.closed p {
+  text-decoration: line-through;
+  color: #b0b0b0;
+}
+
+/* Style des boutons */
+button[mat-raised-button] {
+  background-color: #1976d2;
+  color: white;
+  border-radius: 5px;
+  padding: 10px 20px; /* Ajouter du padding */
+}
+
+button[mat-raised-button]:disabled {
+  background-color: #b0b0b0;
+}
+
+/* Centrer le texte dans la page */
+h2, h3 {
+  text-align: center;
+}

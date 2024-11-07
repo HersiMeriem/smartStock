@@ -1,0 +1,28 @@
+<!-- produit.component.html -->
+<button class="btn btn-primary my-3" [routerLink]="['/dashboard']">Back</button>
+<div class="produits-container">
+    <h2>List of Products</h2>
+
+    <table mat-table [dataSource]="produits" class="mat-elevation-z8">
+        <!-- Nom du produit Column -->
+        <ng-container matColumnDef="nom">
+            <th mat-header-cell *matHeaderCellDef> Product Name</th>
+            <td mat-cell *matCellDef="let produit"> {{produit.nom}} </td>
+        </ng-container>
+
+        <!-- Prix du produit Column -->
+        <ng-container matColumnDef="prix">
+            <th mat-header-cell *matHeaderCellDef>Price </th>
+            <td mat-cell *matCellDef="let produit"> {{produit.prix | currency:'EUR'}} </td>
+        </ng-container>
+
+        <!-- Quantité Column -->
+        <ng-container matColumnDef="quantite">
+            <th mat-header-cell *matHeaderCellDef> Quantity</th>
+            <td mat-cell *matCellDef="let produit"> {{produit.quantite}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>

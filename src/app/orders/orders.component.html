@@ -1,0 +1,11 @@
+<button class="btn btn-primary my-3" [routerLink]="['/dashboard']">Back</button>
+<div class="order-list">
+  <h2>Liste des Commandes</h2>
+  <ul>
+    <li *ngFor="let order of orders">
+      <strong>Commande ID:</strong> {{ order.id }} <br>
+      <strong>Date:</strong> {{ order.date }} <br>
+      <strong>Statut:</strong> {{ order.status }} <br>
+    </li>
+  </ul>
+</div>

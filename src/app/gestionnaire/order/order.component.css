@@ -1,0 +1,134 @@
+/* orders.component.css */
+
+.orders-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 25px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.orders-container:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+h2 {
+    color: #00796b;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center; /* Centrer le titre */
+}
+
+button {
+    margin: 20px 0;
+    background-color: #00796b;
+    color: #ffffff;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer; /* Ajouter un curseur pointer */
+    font-size: 16px; /* Uniformiser la taille des boutons */
+}
+
+button:hover {
+    background-color: #004d40;
+}
+
+.order-list {
+    list-style: none; /* Supprimer le style de liste par défaut */
+    padding: 0; /* Supprimer le padding par défaut */
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    border-bottom: 1px solid #e0e0e0;
+    transition: background-color 0.3s ease;
+}
+
+.order-item h3 {
+    font-size: 20px;
+    font-weight: 500;
+    color: #333333;
+}
+
+.order-item p {
+    font-size: 16px;
+    color: #666666;
+}
+
+.order-item:hover {
+    background-color: #f1f1f1;
+    border-left: 4px solid #00796b;
+}
+
+.status-in-progress {
+    color: #f9a825; /* Couleur pour 'En cours' */
+    font-weight: 600;
+}
+
+.status-received {
+    color: #43a047; /* Couleur pour 'Bien reçu' */
+    font-weight: 600;
+}
+
+.status-canceled {
+    color: #d32f2f; /* Couleur pour 'Annulé' */
+    font-weight: 600;
+}
+
+.mat-icon-button {
+    color: #00796b;
+    transition: color 0.3s ease;
+}
+
+.mat-icon-button:hover {
+    color: #004d40;
+}
+
+@media (max-width: 600px) {
+    .orders-container {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .order-item h3 {
+        font-size: 18px;
+    }
+
+    .order-item p {
+        font-size: 14px;
+    }
+
+    button {
+        width: 100%; /* Rendre les boutons plein largeur sur petits écrans */
+    }
+}
+
+/* Styles pour les états des commandes */
+.status-in-progress {
+    background-color: rgba(173, 216, 230, 0.3); /* Couleur pour 'En cours' avec transparence */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.status-received {
+    background-color: rgba(144, 238, 144, 0.3); /* Couleur pour 'Bien reçu' avec transparence */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.status-canceled {
+    background-color: rgba(255, 99, 71, 0.3); /* Couleur pour 'Annulé' avec transparence */
+    padding: 10px;
+    border-radius: 5px;
+}

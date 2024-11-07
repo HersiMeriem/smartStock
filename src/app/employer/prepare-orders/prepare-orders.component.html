@@ -1,0 +1,36 @@
+<app-navv></app-navv>
+<div class="order-list">
+    <h2>Commandes à Préparer</h2>
+    <ul>
+      <li *ngFor="let order of pendingOrders" (click)="selectOrder(order)">
+        Commande ID: {{ order.id }} | Créée le : {{ order.createdAt | date }}
+      </li>
+    </ul>
+  </div>
+  
+  <div *ngIf="selectedOrder" class="order-details">
+    <h3>Détails de la Commande ID: {{ selectedOrder.id }}</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Produit</th>
+          <th>Quantité Requise</th>
+          <th>Quantité Scannée</th>
+          <th>Scanner</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of selectedOrder.items">
+          <td>{{ item.productName }}</td>
+          <td>{{ item.quantity }}</td>
+          <td>{{ item.scanned }}</td>
+          <td>
+            <button (click)="scanItem(item)" [disabled]="item.scanned >= item.quantity">Scanner</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <button (click)="validateOrderPreparation()" [disabled]="!isOrderReady()">Valider la Préparation</button>
+  </div>
+  

@@ -1,0 +1,14 @@
+<button class="btn btn-primary my-3" [routerLink]="['/dashboard']">Back</button>
+<div class="alert-container">
+    <h2>Alertes</h2>
+    <button (click)="clearAlerts()">Effacer les alertes</button>
+    <div *ngIf="alerts.length > 0" class="alert-list">
+      <div *ngFor="let alert of alerts" [ngClass]="'alert ' + alert.type">
+        {{ alert.message }}
+      </div>
+    </div>
+    <div *ngIf="alerts.length === 0">
+      <p>Aucune alerte disponible.</p>
+    </div>
+  </div>
+  

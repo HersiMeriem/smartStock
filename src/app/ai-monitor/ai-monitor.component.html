@@ -1,0 +1,25 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <h2>AI Predictions Supervision</h2>
+    
+    <!-- Container for the chart -->
+    <div class="chart-container">
+      <canvas id="predictionChart"></canvas>
+    </div>
+    
+    <!-- Data summary -->
+    <div class="data-summary">
+      <h3>Data Summary</h3>
+      <ul>
+        <li><strong>Total Predictions:</strong> {{ predictionData?.total }}</li>
+        <li><strong>Average Predictions:</strong> {{ predictionData?.average }}</li>
+        <!-- Add more summaries here -->
+      </ul>
+    </div>
+    
+    <!-- Additional actions -->
+    <div class="actions">
+      <button class="btn btn-primary" (click)="refreshData()">Refresh Data</button>
+      <!-- Add more buttons or actions if needed -->
+    </div>
+</div>

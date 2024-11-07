@@ -1,0 +1,19 @@
+<app-nav></app-nav>
+<div class="report-generator-container">
+    <h2>Générateur de Rapports</h2>
+    
+    <label for="report-select">Sélectionner le type de rapport:</label>
+    <select id="report-select" [(ngModel)]="selectedReport">
+      <option value="stocks">Rapport sur les Stocks</option>
+      <option value="orders">Rapport sur les Commandes</option>
+      <option value="suppliers">Rapport sur les Fournisseurs</option>
+    </select>
+  
+    <button (click)="downloadReport()" class="generate-btn">Générer le Rapport</button>
+  
+    <div class="report-preview">
+      <h3>Aperçu du Rapport</h3>
+      <pre>{{ generateReport() }}</pre>
+    </div>
+  </div>
+  

@@ -1,0 +1,66 @@
+.alert-container {
+  max-width: 800px; /* Limite la largeur du conteneur pour une meilleure présentation */
+  margin: 30px auto; /* Centre le conteneur et ajoute de l'espace autour */
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9; /* Couleur de fond légèrement différente pour le conteneur */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre douce pour un effet flottant */
+  font-family: 'Roboto', sans-serif; /* Utilisation d'une police moderne et lisible */
+}
+
+.alert-container h2 {
+  font-size: 28px; /* Augmente la taille de l'en-tête pour plus de visibilité */
+  color: #333; /* Couleur de texte plus sombre pour une meilleure lisibilité */
+  margin-bottom: 20px; /* Ajoute de l'espace sous l'en-tête */
+  font-weight: 700; /* Rend le titre plus audacieux */
+  text-align: center; /* Centre le texte de l'en-tête */
+}
+
+.alert-container p {
+  font-size: 16px; /* Augmente légèrement la taille de la police pour les paragraphes */
+  color: #555; /* Utilise une couleur légèrement plus sombre pour le texte */
+  line-height: 1.6; /* Améliore la lisibilité avec une hauteur de ligne plus élevée */
+}
+
+.alert-list {
+  margin-top: 20px; /* Ajoute plus d'espace au-dessus de la liste des alertes */
+}
+
+.alert {
+  padding: 15px; /* Augmente le padding pour plus d'espace intérieur */
+  border-radius: 6px; /* Utilise des coins légèrement plus arrondis */
+  margin-bottom: 10px; /* Ajoute plus d'espace entre les alertes */
+  font-size: 16px; /* Taille de texte par défaut */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre douce pour chaque alerte */
+  transition: all 0.3s ease; /* Ajoute une transition pour les effets de survol */
+}
+
+.alert:hover {
+  transform: scale(1.02); /* Agrandit légèrement l'alerte au survol */
+}
+
+.alert.info {
+  background-color: #d9edf7; /* Bleu clair pour les informations */
+  color: #31708f; /* Texte bleu foncé */
+  border-left: 5px solid #31708f; /* Ajoute une bordure colorée pour une meilleure distinction */
+}
+
+.alert.warning {
+  background-color: #fcf8e3; /* Jaune pâle pour les avertissements */
+  color: #8a6d3b; /* Texte brun foncé */
+  border-left: 5px solid #8a6d3b; /* Ajoute une bordure colorée pour une meilleure distinction */
+}
+
+.alert.error {
+  background-color: #f2dede; /* Rouge clair pour les erreurs */
+  color: #a94442; /* Texte rouge foncé */
+  border-left: 5px solid #a94442; /* Ajoute une bordure colorée pour une meilleure distinction */
+  font-size: 18px; /* Taille légèrement plus grande pour les erreurs */
+}
+
+.alert.success {
+  background-color: #dff0d8; /* Vert pâle pour les succès */
+  color: #3c763d; /* Texte vert foncé */
+  border-left: 5px solid #3c763d; /* Ajoute une bordure colorée pour une meilleure distinction */
+}

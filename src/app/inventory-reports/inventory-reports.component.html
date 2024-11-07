@@ -1,0 +1,25 @@
+<app-navbar></app-navbar>
+<div class="report-container">
+  <h2> Reports</h2>
+  
+  <div class="report-selection">
+    <label for="reportType">Select Report Type:</label>
+    <select id="reportType" [(ngModel)]="selectedReport">
+      <option value="stocks">Stocks Report</option>
+      <option value="orders">Orders Report</option>
+      <option value="suppliers">Suppliers Report</option>
+    </select>
+    <button (click)="downloadReport()">Download Report</button>
+  </div>
+
+  <div class="report-content">
+    <h3 *ngIf="selectedReport === 'stocks'">Stocks Report</h3>
+    <pre *ngIf="selectedReport === 'stocks'">{{ generateStockReport() }}</pre>
+
+    <h3 *ngIf="selectedReport === 'orders'">Orders Report</h3>
+    <pre *ngIf="selectedReport === 'orders'">{{ generateOrderReport() }}</pre>
+
+    <h3 *ngIf="selectedReport === 'suppliers'">Suppliers Report</h3>
+    <pre *ngIf="selectedReport === 'suppliers'">{{ generateSupplierReport() }}</pre>
+  </div>
+</div>

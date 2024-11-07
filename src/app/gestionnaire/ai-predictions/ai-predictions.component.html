@@ -1,0 +1,24 @@
+<app-nav></app-nav>
+<div class="predictions-container">
+    <h2>Prévisions d'IA pour l'Inventaire</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Nom du Produit</th>
+                <th>Prévision de Stock</th>
+                <th>Niveau de Stock Critique</th>
+                <th>État</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let prediction of predictions">
+                <td>{{ prediction.productName }}</td>
+                <td>{{ prediction.forecastedStock }}</td>
+                <td>{{ prediction.criticalStockLevel }}</td>
+                <td [ngClass]="{'critical': isCriticalStock(prediction.forecastedStock, prediction.criticalStockLevel)}">
+                    {{ isCriticalStock(prediction.forecastedStock, prediction.criticalStockLevel) ? 'Critique' : 'Normal' }}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

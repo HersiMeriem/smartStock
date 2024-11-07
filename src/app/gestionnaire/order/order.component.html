@@ -1,0 +1,59 @@
+<app-nav></app-nav>
+<div class="orders-container">
+    <h2>Manage Orders</h2>
+
+    <form (ngSubmit)="addOrUpdateOrder()">
+        <label for="productId">Product ID:</label>
+        <input [(ngModel)]="newOrder.productId" name="productId" placeholder="Enter Product ID" required />
+
+        <label for="productName">Product Name:</label>
+        <input [(ngModel)]="newOrder.productName" name="productName" placeholder="Enter Product Name" required />
+
+        <label for="supplier">Choose Supplier:</label>
+        <select [(ngModel)]="newOrder.supplierId" name="supplier">
+            <option *ngFor="let supplier of suppliers" [value]="supplier.id">{{ supplier.name }}</option>
+        </select>
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" [(ngModel)]="newOrder.quantity" name="quantity" placeholder="Enter Quantity" required />
+
+        <label for="unitPrice">Unit Price:</label>
+        <input type="number" [(ngModel)]="newOrder.unitPrice" name="unitPrice" placeholder="Enter Unit Price" required />
+
+        <label for="totalAmount">Total Amount:</label>
+        <input type="number" [(ngModel)]="newOrder.totalAmount" name="totalAmount" [value]="calculateTotalAmount()" readonly />
+
+        <label for="status">Order Status:</label>
+        <select [(ngModel)]="newOrder.status" name="status">
+            <option value="in_progress">In Progress</option>
+            <option value="received">Received</option>
+            <option value="canceled">Canceled</option>
+        </select>
+
+        <label for="createdAt">Date Created:</label>
+        <input type="date" [(ngModel)]="newOrder.createdAt" name="createdAt" required />
+
+        <label for="deliveryDate">Delivery Date:</label>
+        <input type="date" [(ngModel)]="newOrder.deliveryDate" name="deliveryDate" required />
+
+        <button type="submit">{{ editMode ? 'Update Order' : 'Add Order' }}</button>
+        <button *ngIf="editMode" type="button" (click)="cancelEdit()">Cancel</button>
+    </form>
+
+    <ul>
+        <li *ngFor="let order of orders" [ngClass]="getOrderStatusClass(order.status)">
+            <p><strong>Order ID:</strong> {{ order.id }}</p>
+            <p><strong>Product Name:</strong> {{ order.productName }}</p>
+            <p><strong>Supplier:</strong> {{ getSupplierName(order.supplierId) }}</p>
+            <p><strong>Quantity:</strong> {{ order.quantity }}</p>
+            <p><strong>Unit Price:</strong> {{ order.unitPrice }}</p>
+            <p><strong>Total Amount:</strong> {{ order.totalAmount }}</p>
+            <p><strong>Status:</strong> {{ order.status }}</p>
+            <p><strong>Date Created:</strong> {{ order.createdAt | date }}</p>
+            <p><strong>Delivery Date:</strong> {{ order.deliveryDate | date }}</p>
+            <button (click)="editOrder(order)">Edit</button>
+            <button (click)="deleteOrder(order.id)">Delete</button>
+            <hr />
+        </li>
+    </ul>
+</div>

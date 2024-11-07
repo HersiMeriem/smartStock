@@ -1,0 +1,32 @@
+<app-navv></app-navv>
+<div class="inventory-container">
+    <h2>Vérification des Stocks</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Nom</th>
+          <th>Quantité Attendue</th>
+          <th>Quantité Comptée</th>
+          <th>Écart</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products">
+          <td>{{ product.code }}</td>
+          <td>{{ product.name }}</td>
+          <td>{{ product.expectedQuantity }}</td>
+          <td>{{ product.countedQuantity }}</td>
+          <td>{{ product.discrepancy || 0 }}</td>
+          <td>
+            <button (click)="scanProduct(product)">Scanner</button>
+            <button (click)="reportDiscrepancy(product)">Signaler Écart</button>
+            <button (click)="markAsDamaged(product)">Endommagé</button>
+            <button (click)="markAsMissing(product)">Manquant</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

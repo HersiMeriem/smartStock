@@ -1,0 +1,64 @@
+<app-navv></app-navv>
+<div class="receive-products-container">
+    <h2>Réception des Produits</h2>
+    
+    <!-- Formulaire pour scanner un produit -->
+    <form (ngSubmit)="addProduct()" #productForm="ngForm">
+      <mat-form-field>
+        <mat-label>Code Produit</mat-label>
+        <input matInput type="text" [(ngModel)]="newProduct.code" name="code" required>
+      </mat-form-field>
+  
+      <mat-form-field>
+        <mat-label>Nom du Produit</mat-label>
+        <input matInput type="text" [(ngModel)]="newProduct.name" name="name" required>
+      </mat-form-field>
+  
+      <mat-form-field>
+        <mat-label>Quantité</mat-label>
+        <input matInput type="number" [(ngModel)]="newProduct.quantity" name="quantity" required>
+      </mat-form-field>
+  
+      <button mat-raised-button color="primary" type="submit" [disabled]="!productForm.form.valid">Ajouter Produit</button>
+    </form>
+  
+    <!-- Liste des produits reçus -->
+    <h3>Produits Reçus</h3>
+    <mat-table [dataSource]="products" class="mat-elevation-z8">
+      
+      <!-- Colonne Code -->
+      <ng-container matColumnDef="code">
+        <mat-header-cell *matHeaderCellDef> Code Produit </mat-header-cell>
+        <mat-cell *matCellDef="let product"> {{product.code}} </mat-cell>
+      </ng-container>
+      
+      <!-- Colonne Nom -->
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> Nom </mat-header-cell>
+        <mat-cell *matCellDef="let product"> {{product.name}} </mat-cell>
+      </ng-container>
+      
+      <!-- Colonne Quantité -->
+      <ng-container matColumnDef="quantity">
+        <mat-header-cell *matHeaderCellDef> Quantité </mat-header-cell>
+        <mat-cell *matCellDef="let product"> {{product.quantity}} </mat-cell>
+      </ng-container>
+      
+      <!-- Colonne Actions -->
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+        <mat-cell *matCellDef="let product">
+          <button mat-icon-button color="accent" (click)="editProduct(product)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="deleteProduct(product.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-cell>
+      </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>
+  

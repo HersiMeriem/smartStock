@@ -1,0 +1,74 @@
+.report-generator-container {
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); 
+    max-width: 600px;
+    margin: 20px auto;
+    transition: transform 0.3s; 
+}
+
+.report-generator-container:hover {
+    transform: scale(1.02); 
+}
+
+h2 {
+    text-align: center;
+    color: #3F51B5; 
+    font-family: 'Roboto', sans-serif; 
+    margin-bottom: 20px; 
+    font-size: 1.8em; 
+}
+
+label {
+    display: block;
+    margin: 15px 0 5px; 
+    font-weight: bold; 
+    color: #333; 
+}
+
+select {
+    width: 100%;
+    padding: 12px; 
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em; 
+    transition: border-color 0.3s;
+}
+
+select:focus {
+    border-color: #3F51B5; 
+    outline: none; 
+}
+
+.generate-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #3F51B5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em; 
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.generate-btn:hover {
+    background-color: #303F9F;
+    transform: translateY(-2px);
+}
+
+.report-preview {
+    margin-top: 20px;
+    background-color: #f9f9f9; 
+    padding: 15px; 
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s; 
+}
+
+.report-preview:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+}

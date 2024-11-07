@@ -1,0 +1,65 @@
+<app-navbar></app-navbar>
+
+<div class="dashboard-container">
+  <mat-grid-list cols="3" rowHeight="250px" gutterSize="24px">
+    
+    <!-- Carte des Produits -->
+    <mat-grid-tile>
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>Total Products</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <h2>{{ totalProduits }}</h2>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button class="primary-btn" [routerLink]="['/produits']">View Products</button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <mat-card class="dashboard-card warning">
+        <mat-card-header>
+          <mat-card-title>Low Stock Alerts</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <h2>{{ stockBas }}</h2>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button class="warn-btn" [routerLink]="['/alert']">See Alerts</button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>Total Orders</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <h2>{{ totalCommandes }}</h2>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button class="primary-btn" [routerLink]="['/orders']">See Orders</button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+    
+   
+    <mat-grid-tile>
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>Inventory Reports</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <h3>View Reports</h3>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button class="primary-btn" [routerLink]="['/inventoryreports']">View Reports</button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+  
+  </mat-grid-list>
+</div>

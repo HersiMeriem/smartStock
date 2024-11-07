@@ -47,7 +47,6 @@ import { ProduitComponent } from './gestionnaire/produit/produit.component';
 import { ReportGeneratorComponent } from './gestionnaire/report-generator/report-generator.component';
 import { AiPredictionsComponent } from './gestionnaire/ai-predictions/ai-predictions.component';
 
-import { NavbarrComponent } from './fournisseurs/navbarr/navbarr.component';
 import { ReceiveProductsComponent } from './employer/receive-products/receive-products.component';
 import { NavvComponent } from './employer/navv/navv.component';
 import { PrepareOrdersComponent } from './employer/prepare-orders/prepare-orders.component';
@@ -81,7 +80,6 @@ import { VerifyStocksComponent } from './employer/verify-stocks/verify-stocks.co
    ProduitComponent,
    ReportGeneratorComponent,
    AiPredictionsComponent,
-   NavbarrComponent,
    ReceiveProductsComponent,
    NavvComponent,
    PrepareOrdersComponent,

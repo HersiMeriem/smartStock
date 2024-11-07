@@ -1,7 +1,0 @@
-.img-profile {
-    width: 50px; /* Ajustez la largeur selon vos besoins */
-    height: 50px; /* Ajustez la hauteur pour garder l'aspect ratio */
-    border-radius: 50%; /* Pour obtenir une image ronde */
-    object-fit: cover; /* Assure que l'image remplit bien le conteneur */
-  }
-  

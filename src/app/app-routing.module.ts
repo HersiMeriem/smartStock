@@ -21,7 +21,6 @@ import { FournisseurComponent } from './gestionnaire/fournisseur/fournisseur.com
 import { ProduitComponent } from './gestionnaire/produit/produit.component';
 import { ReportGeneratorComponent } from './gestionnaire/report-generator/report-generator.component';
 import { AiPredictionsComponent } from './gestionnaire/ai-predictions/ai-predictions.component';
-import { NavbarrComponent } from './fournisseurs/navbarr/navbarr.component';
 
 import { NavvComponent } from './employer/navv/navv.component';
 import { ReceiveProductsComponent } from './employer/receive-products/receive-products.component';
@@ -52,8 +51,6 @@ const routes: Routes = [
   { path: 'produit', component: ProduitComponent},
   { path: 'report', component: ReportGeneratorComponent},
   { path: 'ai', component: AiPredictionsComponent},
-
-  { path: 'navbarr', component:NavbarrComponent},
 
   { path: 'navv', component:NavvComponent},
   { path: 'prepare-orders', component:PrepareOrdersComponent},
